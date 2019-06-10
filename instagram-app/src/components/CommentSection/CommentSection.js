@@ -9,7 +9,14 @@ class CommentSection extends React.Component {
     render() {
         return (
             <div className="comment-section">
-                test comment
+                {
+                    this.props.comments.map(comment => (
+                        <div className="comment" key={comment.id}>
+                            <strong>{comment.username}: </strong>
+                            <span>{comment.text}</span>
+                        </div>
+                    ))
+                }
             </div>
         );
     }

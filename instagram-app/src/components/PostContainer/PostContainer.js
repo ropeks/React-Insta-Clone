@@ -21,7 +21,7 @@ class PostContainer extends React.Component {
                                 <strong>{post.username}</strong>
                             </div>
                             <img className="posted-img" src={post.imageUrl} alt="image" />
-                            <CommentSection />
+                            <CommentSection comments={post.comments}/>
                         </div>
                     ))
                 }
