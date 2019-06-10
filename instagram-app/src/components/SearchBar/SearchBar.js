@@ -9,7 +9,9 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="search-bar">
-                search bar
+                <img src="./sb-img.svg" alt="instagram logo" />
+                <input value="search" />
+                <img src="./sb-img2.svg" alt="instagram icons" />
             </div>
         );
     }

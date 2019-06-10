@@ -1,3 +1,17 @@
 .search-bar {
-    color: red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar img {
+    width: 100px;
+    border: 1px solid;
+}
+
+.search-bar input {
+    text-align: center;
+    height: 20px;
+    margin-top: 10px;
+    border: 2px solid;
+    border-radius: 5%;
 }
