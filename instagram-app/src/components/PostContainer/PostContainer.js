@@ -10,7 +10,21 @@ class PostContainer extends React.Component {
     render() {
         return (
             <div className="post-container">
-                <CommentSection />
+                {
+                    this.props.data.map(post => (
+                        <div 
+                        key={post.id} 
+                        className="post"
+                        >
+                            <div className="user">
+                                <img className="thumbnail" src={post.thumbnailUrl} alt="thumbnail" />
+                                <strong>{post.username}</strong>
+                            </div>
+                            <img className="posted-img" src={post.imageUrl} alt="image" />
+                            <CommentSection />
+                        </div>
+                    ))
+                }
             </div>
         );
     }

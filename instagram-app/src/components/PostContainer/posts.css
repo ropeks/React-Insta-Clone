@@ -1,5 +1,13 @@
 .post-container {
     padding: 5px;
-    width: 100px;
     border: 2px solid;
+}
+
+.thumbnail {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.posted-img {
+    width: 485px;
 }
