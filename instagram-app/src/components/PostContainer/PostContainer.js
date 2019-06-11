@@ -12,12 +12,12 @@ class PostContainer extends React.Component {
 
     componentDidMount() {
         this.setState({ likes: this.props.likes });
-    }  
+    }
 
     likeIt = () => {
         let likes = this.state.likes + 1;
         this.setState({ likes: likes });
-    } 
+    }
 
     render() {
         return (
@@ -30,7 +30,7 @@ class PostContainer extends React.Component {
                 <div className="likes">
                     {this.state.likes} likes
                 </div>
-                <CommentSection comments={this.props.post.comments}/>
+                <CommentSection comments={this.props.post.comments} />
             </div>
         );
     }

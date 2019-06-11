@@ -11,10 +11,10 @@ class SearchBar extends React.Component {
             <div className="search-bar">
                 <img src="./sb-img.svg" alt="instagram logo" />
                 <form onSubmit={this.props.search}>
-                    <input 
+                    <input
                         value={this.props.value}
                         placeholder="search"
-                        onChange={this.props.change} 
+                        onChange={this.props.change}
                     />
                 </form>
                 <img src="./sb-img2.svg" alt="instagram icons" />
