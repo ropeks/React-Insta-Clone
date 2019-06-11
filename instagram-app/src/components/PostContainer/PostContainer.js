@@ -13,8 +13,10 @@ class PostContainer extends React.Component {
                 {
                     this.props.data.map(post => (
                         <div 
-                        key={post.id} 
-                        className="post"
+                            className="post"
+                            post={post}
+                            key={post.id}
+                            comments={post.comments}
                         >
                             <div className="user">
                                 <img className="thumbnail" src={post.thumbnailUrl} alt="thumbnail" />
