@@ -9,6 +9,7 @@ class App extends React.Component {
     super();
     this.state = {
       data: [],
+      searchValue: ""
     }
   }
 
@@ -16,10 +17,22 @@ class App extends React.Component {
     this.setState({ data: dummyData });
   }
 
+  changeHandler = event => {
+    this.setState({ searchValue: event.target.value });
+  };
+
+  searchIt = event => {
+    event.preventDefault();
+    let result = this.state.data.filter(post => {
+      return post.username === this.state.searchValue
+    })
+    this.setState({ data: result });
+  }
+
   render() {
     return (
       <div className="app">
-        <SearchBar />
+        <SearchBar search={this.searchIt} value={this.state.searchValue} change={this.changeHandler} />
         {
           this.state.data.map(post => (
             <PostContainer 
