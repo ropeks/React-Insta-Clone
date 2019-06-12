@@ -11,3 +11,11 @@
 .posted-img {
     width: 485px;
 }
+
+.likes {
+    display: flex;
+}
+
+.likes div {
+    margin: 0 5px 0 5px;
+} 
