@@ -21,14 +21,17 @@ class CommentSection extends React.Component {
 
     addComment = event => {
         event.preventDefault();
-        this.setState({
-            comments: this.state.comments.concat({
-                id: uuid(),
-                username: "ropeks",
-                text: this.state.addComment
-            }),
-            addComment: ""
-        });
+        if (this.state.addComment !== "") {
+            this.setState({
+                comments: this.state.comments.concat({
+                    id: uuid(),
+                    username: "ropeks",
+                    text: this.state.addComment
+                }),
+                addComment: ""
+            });
+        }
+        
     }
 
     render() {

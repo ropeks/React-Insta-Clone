@@ -1,14 +1,26 @@
 .post-container {
     padding: 5px;
-    border: 2px solid;
+    border: 2px solid gray;
+}
+
+.user {
+    display: flex;
 }
 
 .thumbnail {
+    margin-right: 5px;
     width: 30px;
     border-radius: 50%;
 }
 
+.username {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .posted-img {
+    margin-top: 5px;
     width: 485px;
 }
 
