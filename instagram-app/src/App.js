@@ -35,6 +35,9 @@ class App extends React.Component {
         searchValue: ""
       });
     } else {
+      this.setState({
+        searchValue: ""
+      });
       alert('there are no posts by that user');
     }
 
@@ -44,17 +47,16 @@ class App extends React.Component {
     return (
       <div className="app">
         {
-          !this.state.isAuthed ?
-          <Login /> :
+          !this.props.isAuthed ?
+          <Login login={this.props.login} username={this.props.username} change={this.props.changeHandler} /> :
           <PostsPage 
-          data={this.state.data} 
-          search={this.state.searchValue} 
-          searchIt={this.searchIt} 
-          changeHandler={this.changeHandler} 
-        />
+            data={this.state.data} 
+            search={this.state.searchValue} 
+            searchIt={this.searchIt} 
+            changeHandler={this.changeHandler} 
+            logout={this.props.logout}
+          />
         }
-        
-        
       </div>
     );
   }

@@ -10,7 +10,7 @@ export default class PostsPage extends React.Component {
     render() {
         return (
             <>
-                <SearchBar search={this.props.searchIt} value={this.props.search} change={this.changeHandler} />
+                <SearchBar search={this.props.searchIt} logout={this.props.logout} value={this.props.search} change={this.props.changeHandler} />
                 {
                     this.props.data.map(post => (
                         <PostContainer
