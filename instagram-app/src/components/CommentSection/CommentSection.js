@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from "uuid";
 import './comments.css';
+import '../SearchBar/search.css';
 
 class CommentSection extends React.Component {
     constructor() {
@@ -47,6 +48,7 @@ class CommentSection extends React.Component {
                 }
                 <form onSubmit={this.addComment}>
                     <input
+                        className="input"
                         placeholder="add comment"
                         onChange={this.changeHandler}
                         value={this.state.addComment}

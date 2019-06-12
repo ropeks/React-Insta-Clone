@@ -1,8 +1,5 @@
 .login-container {
     margin: auto;
+    margin-top: 5px;
     width: fit-content;
-}
-
-.login-input {
-    margin: 5px 10px 10px 0;
 }

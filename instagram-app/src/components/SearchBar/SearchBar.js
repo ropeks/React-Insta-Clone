@@ -11,6 +11,7 @@ class SearchBar extends React.Component {
             <div className="search-bar">
                 <form onSubmit={this.props.search}>
                     <input
+                        className="input"
                         value={this.props.value}
                         placeholder="search"
                         onChange={this.props.change}

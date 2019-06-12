@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css';
+import '../SearchBar/search.css';
 
 export default class Login extends React.Component {
     constructor() {
@@ -12,7 +13,7 @@ export default class Login extends React.Component {
                 <input 
                     value={this.props.username} 
                     onChange={this.props.change}
-                    className="login-input" 
+                    className="input" 
                 />
                 <button onClick={this.props.login}>Login</button>
             </form>
