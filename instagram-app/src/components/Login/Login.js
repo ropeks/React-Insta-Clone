@@ -10,7 +10,7 @@ export default class Login extends React.Component {
         return (
             <form className="login-container" onSubmit={this.props.login}>
                 <input 
-                    //value={this.props.username} 
+                    value={this.props.username} 
                     onChange={this.props.change}
                     className="login-input" 
                 />

@@ -5,14 +5,14 @@ function withAuthentication(Component) {
         constructor() {
             super();
             this.state = {
-                isAuthed: true,
+                isAuthed: false,
                 username: ''
             }
         }
 
         changeHandler = event => {
             this.setState({ username: event.target.value });
-        };
+        }
 
         componentDidMount() {
             localStorage.getItem('is_authed') &&
@@ -21,13 +21,18 @@ function withAuthentication(Component) {
             this.setState({ username: "ropeks" });
         }
 
-        login = () => {
-            localStorage.setItem('is_authed', true);
-            localStorage.setItem('username', "ropeks");
-            this.setState({ 
-                isAuthed: true,
-                username: "ropeks"
-            });
+        login = (event) => {
+            if (this.state.username === "ropeks") {
+                localStorage.setItem('is_authed', true);
+                localStorage.setItem('username', "ropeks");
+                this.setState({ 
+                    isAuthed: true,
+                    username: "ropeks"
+                });
+            } else {
+                event.preventDefault();
+                alert('incorrect username');
+            }
         }
 
         logout = () => {

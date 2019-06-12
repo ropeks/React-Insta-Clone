@@ -48,7 +48,7 @@ class App extends React.Component {
       <div className="app">
         {
           !this.props.isAuthed ?
-          <Login login={this.props.login} username={this.props.username} change={this.props.changeHandler} /> :
+          <Login login={this.props.login} username={this.props.username} change={this.props.change} /> :
           <PostsPage 
             data={this.state.data} 
             search={this.state.searchValue} 
