@@ -1,7 +1,8 @@
 import React from 'react';
 import dummyData from './dummy-data';
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
+import PostsPage from './components/PostContainer/PostsPage';
+import Login from './components/Login/Login';
+import withAuthentication from './components/Authentication/withAuthentication';
 import './index.css';
 
 class App extends React.Component {
@@ -42,20 +43,21 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <SearchBar search={this.searchIt} value={this.state.searchValue} change={this.changeHandler} />
         {
-          this.state.data.map(post => (
-            <PostContainer
-              className="post"
-              post={post}
-              key={post.id}
-              likes={post.likes}
-            />
-          ))
+          !this.state.isAuthed ?
+          <Login /> :
+          <PostsPage 
+          data={this.state.data} 
+          search={this.state.searchValue} 
+          searchIt={this.searchIt} 
+          changeHandler={this.changeHandler} 
+        />
         }
+        
+        
       </div>
     );
   }
 }
 
-export default App;
+export default withAuthentication(App);

@@ -22,11 +22,7 @@ class PostContainer extends React.Component {
 
     likeIt = () => {
         let likes = this.state.likes;
-        if (!this.state.isLiked) {
-            likes++;    
-        } else {
-            likes--;
-        }
+        !this.state.isLiked ? likes++ : likes--;
         this.setState(state => ({ likes: likes, isLiked: !state.isLiked }))
     }
 
