@@ -1,27 +1,24 @@
 import React from 'react';
-import './search.css';
+import {InputContainer, Input, Button} from "../StyledComps/InputStyles";
 
-class SearchBar extends React.Component {
+export default class SearchBar extends React.Component {
     constructor() {
         super();
     }
 
     render() {
         return (
-            <div className="search-bar">
+            <InputContainer>
                 <form onSubmit={this.props.search}>
-                    <input
-                        className="input"
-                        value={this.props.value}
+                    <Input
                         placeholder="search"
+                        value={this.props.value}
                         onChange={this.props.change}
                     />
-                    <button className="button" onClick={this.props.search}>Search</button>
-                    <button className="button" onClick={this.props.logout}>Logout</button>
+                    <Button onClick={this.props.search}>Search</Button>
+                    <Button onClick={this.props.logout}>Logout</Button>
                 </form>
-            </div>
+            </InputContainer>
         );
     }
 }
-
-export default SearchBar;

@@ -1,6 +1,5 @@
 import React from 'react';
-import './login.css';
-import '../SearchBar/search.css';
+import {InputContainer, Input, Button} from "../StyledComps/InputStyles";
 
 export default class Login extends React.Component {
     constructor() {
@@ -9,14 +8,17 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <form className="login-container" onSubmit={this.props.login}>
-                <input 
-                    value={this.props.username} 
-                    onChange={this.props.change}
-                    className="input" 
-                />
-                <button onClick={this.props.login}>Login</button>
-            </form>
+            <InputContainer>
+                <form onSubmit={this.props.login}>
+                    <Input 
+                        placeholder="username"
+                        value={this.props.username} 
+                        onChange={this.props.change}
+                    />
+                    <Button onClick={this.props.login}>Login</Button>
+                </form>
+            </InputContainer>
+            
         );
     }
 }

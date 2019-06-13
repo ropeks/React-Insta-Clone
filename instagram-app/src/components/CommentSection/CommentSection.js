@@ -1,7 +1,6 @@
 import React from 'react';
 import uuid from "uuid";
-import './comments.css';
-import '../SearchBar/search.css';
+import {InputContainer, Input, Button} from "../StyledComps/InputStyles";
 
 class CommentSection extends React.Component {
     constructor() {
@@ -37,23 +36,22 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-            <div className="comment-section">
+            <div>
                 {
                     this.state.comments.map(comment => (
-                        <div className="comment" key={comment.id}>
+                        <div key={comment.id}>
                             <strong>{comment.username}: </strong>
                             <span>{comment.text}</span>
                         </div>
                     ))
                 }
                 <form onSubmit={this.addComment}>
-                    <input
-                        className="input"
+                    <Input
                         placeholder="add comment"
-                        onChange={this.changeHandler}
                         value={this.state.addComment}
+                        onChange={this.changeHandler}
                     />
-                    <button onClick={this.addComment}>Comment</button>
+                    <Button onClick={this.addComment}>Comment</Button>
                 </form>
             </div>
         );
