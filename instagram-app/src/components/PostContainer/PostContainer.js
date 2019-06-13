@@ -40,7 +40,7 @@ class PostContainer extends React.Component {
                 </User>
                 <PostedImage src={this.props.post.imageUrl} alt="image" />
                 <Likes>
-                    <div>{this.state.likes} likes</div>
+                    <div><strong>{this.state.likes}</strong> likes</div>
                     <img src={images[img]} onClick={this.likeIt} alt="like image"></img>
                 </Likes>
                 <CommentSection comments={this.props.post.comments} />

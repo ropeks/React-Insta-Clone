@@ -1,8 +1,9 @@
 import React from 'react';
 import dummyData from './dummy-data';
-import PostsPage from './components/PostContainer/PostsPage';
 import Login from './components/Login/Login';
+import PostsPage from './components/PostContainer/PostsPage';
 import withAuthentication from './components/Authentication/withAuthentication';
+import {AppStyles} from './components/StyledComps/AppStyles'
 import './index.css';
 
 class App extends React.Component {
@@ -45,19 +46,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <>
         {
-          !this.props.isAuthed ?
-          <Login login={this.props.login} username={this.props.username} change={this.props.change} /> :
-          <PostsPage 
-            data={this.state.data} 
-            search={this.state.searchValue} 
-            searchIt={this.searchIt} 
-            changeHandler={this.changeHandler} 
-            logout={this.props.logout}
-          />
+          !this.props.isAuthed &&
+          <AppStyles login>
+            <Login login={this.props.login} username={this.props.username} change={this.props.change} /> :
+          </AppStyles>
         }
-      </div>
+        {
+          this.props.isAuthed &&
+          <AppStyles>
+            <PostsPage 
+              data={this.state.data} 
+              search={this.state.searchValue} 
+              searchIt={this.searchIt} 
+              changeHandler={this.changeHandler} 
+              logout={this.props.logout}
+            />
+          </AppStyles>
+        }
+      </>
     );
   }
 }
