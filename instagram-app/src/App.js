@@ -50,7 +50,7 @@ class App extends React.Component {
         {
           !this.props.isAuthed &&
           <AppStyles login>
-            <Login login={this.props.login} username={this.props.username} change={this.props.change} /> :
+            <Login login={this.props.login} username={this.props.username} change={this.props.change} />
           </AppStyles>
         }
         {
